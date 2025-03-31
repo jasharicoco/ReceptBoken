@@ -13,7 +13,7 @@ const RecipeCard = ({ recipe, editRecipe, deleteRecipe, setSelectedRecipe }) => 
 
   return (
     <div 
-      className="relative flex justify-between items-start p-6 border border-gray-200 rounded-xl shadow-lg bg-white hover:shadow-2xl transition duration-300 ease-in-out min-h-[250px]"
+      className="relative flex justify-between items-start p-6 border border-gray-200 rounded-xl shadow-lg bg-white hover:shadow-2xl transition duration-300 ease-in-out"
       onClick={handleCardClick}  // Lägg till en klickbar händelse på hela kortet
     >
       <div className="flex-grow">
