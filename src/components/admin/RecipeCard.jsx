@@ -13,7 +13,7 @@ const RecipeCard = ({ recipe, editRecipe, deleteRecipe, setSelectedRecipe }) => 
 
   return (
     <div 
-      className="relative flex justify-between items-start p-6 border border-gray-200 rounded-xl shadow-lg bg-white hover:shadow-2xl transition duration-300 ease-in-out"
+      className="relative flex flex-col md:flex-row justify-between items-start p-6 border border-gray-200 rounded-xl shadow-lg bg-white hover:shadow-2xl transition duration-300 ease-in-out"
       onClick={handleCardClick}  // Lägg till en klickbar händelse på hela kortet
     >
       <div className="flex-grow">
@@ -35,22 +35,45 @@ const RecipeCard = ({ recipe, editRecipe, deleteRecipe, setSelectedRecipe }) => 
         <div className="flex gap-3 mt-3 flex-wrap">
           {recipe.tags.map((tag, index) => (
             <span
-            key={index}
-            className="bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-medium"
-            onClick={(e) => e.stopPropagation()}> {/* Förhindra att taggarna triggar kort-klicket */}
+              key={index}
+              className="bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-medium"
+              onClick={(e) => e.stopPropagation()}>
               {tag}
             </span>
           ))}
         </div>
+
+        {/* Knapparna flyttas ner vid mindre skärmar */}
+        <div className="flex gap-3 mt-3 flex-wrap md:hidden">
+          <button
+            onClick={(e) => { 
+              e.stopPropagation();
+              editRecipe(recipe.id); 
+              scrollToTop();
+            }}
+            className="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm hover:bg-yellow-600 transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            Ändra
+          </button>
+          <button
+            onClick={(e) => { 
+              e.stopPropagation();
+              deleteRecipe(recipe.id); 
+            }}
+            className="bg-red-500 text-white px-4 py-2 rounded-full text-sm hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            Ta bort
+          </button>
+        </div>
       </div>
 
-      {/* Knapparna som är fästa på höger sida */}
-      <div className="absolute right-6 top-6 flex gap-4">
+      {/* Knapparna som är fästa på höger sida vid större skärmar */}
+      <div className="absolute right-6 top-6 gap-4 md:flex hidden">
         <button
           onClick={(e) => { 
-            e.stopPropagation(); // Förhindra att edit-knappen triggar card-klicket
-            editRecipe(recipe.id); 
-            scrollToTop(); 
+            e.stopPropagation();
+            editRecipe(recipe.id);
+            scrollToTop();
           }}
           className="bg-yellow-500 text-white px-6 py-3 rounded-full hover:bg-yellow-600 transition duration-300 ease-in-out transform hover:scale-105"
         >
@@ -58,8 +81,8 @@ const RecipeCard = ({ recipe, editRecipe, deleteRecipe, setSelectedRecipe }) => 
         </button>
         <button
           onClick={(e) => { 
-            e.stopPropagation(); // Förhindra att delete-knappen triggar card-klicket
-            deleteRecipe(recipe.id); 
+            e.stopPropagation();
+            deleteRecipe(recipe.id);
           }}
           className="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
         >

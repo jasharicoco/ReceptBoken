@@ -16,7 +16,7 @@ const Admin = () => {
   const [editingRecipeId, setEditingRecipeId] = useState(null);
   const navigate = useNavigate();
   const [trash, setTrash] = useState(JSON.parse(localStorage.getItem("trash")) || []);
-  const [availableTags] = useState(["Frukost", "Lunch", "Middag", "Efterrätt", "Vegetariskt", "Veganskt", "Snacks", "Övrigt"]);
+  const [availableTags] = useState(["Frukost", "Lunch", "Middag", "Efterrätt", "Vegetariskt", "Veganskt", "Snacks", "Bakning", "Övrigt"]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   // Kontrollera om användaren är autentiserad när komponenten laddas
@@ -174,9 +174,9 @@ const Admin = () => {
         {trash.length > 0 && (
           <button
             onClick={emptyTrash}
-            className="absolute right-4 bg-red-500 text-white text-base font-normal px-6 py-3 rounded-full hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
+            className="absolute right-4 bg-red-500 text-white px-4 py-2 rounded-full font-normal text-sm hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
           >
-            Töm papperskorgen
+            Töm
           </button>
         )}
       </h2>
