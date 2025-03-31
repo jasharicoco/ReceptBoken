@@ -174,12 +174,14 @@ const Admin = () => {
         {trash.length > 0 && (
           <button
             onClick={emptyTrash}
-            className="absolute right-4 bg-red-500 text-white px-4 py-2 rounded-full font-normal text-sm hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
+            className="absolute right-4 bg-red-500 text-white text-sm sm:text-base sm:px-6 sm:py-3 px-4 py-2 rounded-full font-normal hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
           >
-            Töm
+            <span className="block sm:hidden">Töm</span>  {/* Visa "Töm" för små skärmar */}
+            <span className="hidden sm:block">Töm papperskorgen</span> {/* Visa "Töm papperskorgen" för större skärmar */}
           </button>
         )}
       </h2>
+
       <div className="space-y-6">
         {trash.map((recipe) => (
           <TrashCard
