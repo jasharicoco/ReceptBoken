@@ -1,4 +1,4 @@
 # RecipeBook
 
-GitHub Pages: https://jasharicoco.github.io/ReceptBoken
+GitHub Pages: https://jasharicoco.github.io/ReceptBoken  
 Admin password: mitthemligalösenord
