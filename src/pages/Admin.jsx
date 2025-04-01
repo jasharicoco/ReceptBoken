@@ -171,8 +171,6 @@ const Admin = () => {
           >
             <span className="block sm:hidden">Töm</span>  {/* Visa "Töm" för små skärmar */}
             <span className="hidden sm:block">Töm papperskorgen</span> {/* Visa "Töm papperskorgen" för större skärmar */}
-            <span className="block sm:hidden">Töm</span>  {/* Visa "Töm" för små skärmar */}
-            <span className="hidden sm:block">Töm papperskorgen</span> {/* Visa "Töm papperskorgen" för större skärmar */}
           </button>
         )}
       </h2>
