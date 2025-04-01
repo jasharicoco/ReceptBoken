@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { EyeIcon, EyeOffIcon } from "lucide-react"; // Importera ikoner
 import { EyeIcon, EyeOffIcon } from "lucide-react"; // Importera ikoner
 
 const Login = () => {
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // Styr om lösenordet ska visas
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false); // Styr om lösenordet ska visas
   const navigate = useNavigate();
@@ -66,7 +62,6 @@ const Login = () => {
         </button>
       </Link>
     </div>
-  );
   );
 };
 

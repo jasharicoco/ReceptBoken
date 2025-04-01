@@ -40,7 +40,6 @@ const TrashCard = ({ recipe, restoreRecipe, confirmDelete }) => (
           Återställ
         </button>
         <button
-        <button
           onClick={() => confirmDelete(recipe.id)}
           className="bg-[#b88a8a] text-white px-4 py-2 rounded-full text-xs hover:bg-[#d18787] transition duration-300 ease-in-out transform hover:scale-105"
         >
