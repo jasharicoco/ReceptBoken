@@ -34,20 +34,31 @@ const Home = () => {
   // RENDERING AV HEM-SIDAN
   // Om användaren inte är autentiserad, navigera till inloggningssidan
   return (
-    <div className="p-8 bg-gray-100 min-h-screen">
+    <div className="p-8 bg-[#f0f2e3] min-h-screen font-sans">
       <AdminButton isAuthenticated={isAuthenticated} />
 
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-5xl font-bold text-gray-800">Receptboken</h1>
+        <h1 className="text-5xl font-bold text-[#4a6f47]">Receptboken</h1>
       </div>
 
-      <FilterDropdown selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter} />
+      <FilterDropdown
+        selectedFilter={selectedFilter}
+        setSelectedFilter={setSelectedFilter}
+        className="bg-[#d3e2d7] text-[#4a6f47] border-[#4a6f47] p-2 rounded-md shadow-md"
+      />
 
-      <RecipeList recipes={filteredRecipes} onRecipeClick={setSelectedRecipe} />
+      <RecipeList
+        recipes={filteredRecipes}
+        onRecipeClick={setSelectedRecipe}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+      />
 
       {/* Visa modalen om ett recept är valt */}
       {selectedRecipe && (
-        <RecipeModal recipe={selectedRecipe} onClose={() => setSelectedRecipe(null)} />
+        <RecipeModal
+          recipe={selectedRecipe}
+          onClose={() => setSelectedRecipe(null)}
+        />
       )}
     </div>
   );

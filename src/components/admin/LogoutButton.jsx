@@ -11,4 +11,4 @@ const LogoutButton = ({ handleLogout }) => {
   );
 };
 
-export default LogoutButton;  // Standard export
+export default LogoutButton;
